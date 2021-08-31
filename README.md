@@ -43,8 +43,26 @@ Finish time: 16:00
  
 Actual time needed to complete: 60 Minutes 
 
+---------------------------------------------------------------------------------------------- 
+
+Class-03: 
+
+Number and name of feature: Feature #1: Display images 
+
+ 
+Estimate of time needed to complete: 180 Minuets 
+ 
+Start time: 14:00  
+ 
+Finish time:  18:00 
+ 
+Actual time needed to complete:  240 Minuets 
+
+---------------------------------------------------------------------------------------------- 
+
  
 
+ 
  
 
  

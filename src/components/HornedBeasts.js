@@ -11,8 +11,12 @@ class HornedBeasts extends React.Component {
     this.state = { timesClicked: 0 };
   }
 
-  increaseTimesClick = (event) => {
+  Click = (event) => {
+    event.preventDefault()
     this.setState({ timesClicked: this.state.timesClicked + 1 });
+    this.props.handleDisplay();
+    this.props.filterBeast(this.props.image_url);
+    console.log(this.props.image_url)
   }
   render() {
     return (
@@ -21,7 +25,7 @@ class HornedBeasts extends React.Component {
           {Array.from({ length: 1 }).map((_, idx) => (
             <Col>
               <Card>
-                <Card.Img variant="top" src={this.props.image_url} onClick={this.increaseTimesClick} />
+                <Card.Img variant="top" src={this.props.image_url} onClick={this.Click} />
                 <Card.Body>
                   <Card.Title>{this.props.title}</Card.Title>
                   <Card.Text>
@@ -33,7 +37,6 @@ class HornedBeasts extends React.Component {
             </Col>
           ))}
         </Row>
-            
       </div>
     )
   }
