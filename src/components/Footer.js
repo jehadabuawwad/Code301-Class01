@@ -1,19 +1,12 @@
 import React from 'react'
 
-
-
 class Footer extends React.Component {
     render(){
         return(
 
-            <h1>Jehad Abu Awwad</h1>
+            <h1>Made by Jehad Abu Awwad ©️ 2021</h1>
         )
     }
-    
-
-
-
-
 }
 
 export default Footer;
