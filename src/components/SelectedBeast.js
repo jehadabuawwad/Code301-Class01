@@ -23,7 +23,6 @@ class SelectedBeast extends React.Component {
                         </Row>
                     </Container>
                     <Modal.Body>{this.props.ChoosenBeast.description}</Modal.Body>
-
                     <Modal.Footer>
                         <Button variant="secondary" onClick={this.props.handleDisplay}>
                             Close
