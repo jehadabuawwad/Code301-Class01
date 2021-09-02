@@ -10,16 +10,20 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = ({
+            Data: Data,
             show: false,
-            ChoosenBeast: []
+            SelectedBeast: {},
+            FilteredBeasts: {},
+
         });
     }
 
-    handleDisplay = () => {
+    handleModalDisplay = () => {
         this.setState({ show: !this.state.show })
     }
 
-    filterBeast = (src) => {
+
+    selectBeast = (src) => {
         let ourTarget;
         Data.forEach(element => {
             if (element.image_url === src) {
@@ -27,26 +31,26 @@ class App extends React.Component {
             }
         });
 
-        this.setState({ ChoosenBeast: ourTarget });
+        this.setState({ SelectedBeast: ourTarget });
     }
 
-   
+    render() {
+        return (
+            <div>
+                <Header />
+                <Main
+                    Data={this.state.Data}
+                    selectBeast={this.selectBeast}
+                    SelectedBeast={this.state.SelectedBeast}
 
-render() {
-    return (
-        <div>
-            <Header />
-            <Main
-                Data={Data}
-                handleDisplay={this.handleDisplay}
-                filterBeast={this.filterBeast}
-                show={this.state.show}
-                ChoosenBeast={this.state.ChoosenBeast}
-            />
-            <Footer />
-        </div>
-    )
-}
+                    handleModalDisplay={this.handleModalDisplay}
+                    show={this.state.show}
+
+                />
+                <Footer />
+            </div>
+        )
+    }
 }
 
 export default App;

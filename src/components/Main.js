@@ -7,16 +7,43 @@ import DataForm from './DataForm'
 class Main extends React.Component {
 
 
+    constructor(props) {
+        super(props);
+        this.state = ({
+            Data: this.props.Data
+        });
+    }
+
+    filterBeasts = (event) => {
+        event.preventDefault();
+        let SelectBaseOnHorns = parseInt(event.target.value);
+        let AllData = this.props.Data;
+
+        let FilteredData = AllData.filter(element => {
+            return (element.horns === SelectBaseOnHorns);
+        })
+        if (FilteredData.length > 0) {
+            this.setState({
+                Data: FilteredData,
+            })
+
+        }
+        else if (FilteredData.length === 0) {
+            this.setState({
+                Data: this.props.Data,
+            })
+        }
+    }
+
     render() {
         return (
             <main>
                 <DataForm
-                    
-
+                    filterBeasts={this.filterBeasts}
                 />
                 <Row xs={1} md={4} className="g-4">
                     {
-                        this.props.Data.map(element => {
+                        this.state.Data.map(element => {
                             return (
                                 <div>
                                     <HornedBeasts
@@ -24,11 +51,8 @@ class Main extends React.Component {
                                         title={element.title}
                                         description={element.description}
 
-                                        handleDisplay={this.props.handleDisplay}
-                                        show={this.props.show}
-
-                                        filterBeast={this.props.filterBeast}
-
+                                        handleModalDisplay={this.props.handleModalDisplay}
+                                        selectBeast={this.props.selectBeast}
                                     />
                                 </div>
                             )
@@ -38,12 +62,11 @@ class Main extends React.Component {
                 </Row>
 
                 <SelectedBeast
-                    handleDisplay={this.props.handleDisplay}
+                    handleModalDisplay={this.props.handleModalDisplay}
                     show={this.props.show}
 
-                    ChoosenBeast={this.props.ChoosenBeast}
-
-
+                    selectBeast={this.props.selectBeast}
+                    SelectedBeast={this.props.SelectedBeast}
                 />
             </main>
         )

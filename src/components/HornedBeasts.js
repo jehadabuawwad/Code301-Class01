@@ -13,12 +13,10 @@ class HornedBeasts extends React.Component {
   Click = (event) => {
     event.preventDefault()
     this.setState({ timesClicked: this.state.timesClicked + 1 });
-    this.props.handleDisplay();
-    this.props.filterBeast(this.props.image_url);
+    this.props.handleModalDisplay();
+    this.props.selectBeast(this.props.image_url);
   }
 
-
-  
   render() {
     return (
       <div>
