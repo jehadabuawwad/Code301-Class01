@@ -1,10 +1,10 @@
-import React from "react";
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Modal";
-import Row from "react-bootstrap/Card";
-import Col from "react-bootstrap/Card";
-import Container from "react-bootstrap/Card";
-import Image from "react-bootstrap/Image";
+import React from 'react';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Modal';
+import Row from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Card';
+import Image from 'react-bootstrap/Image';
 class SelectedBeast extends React.Component {
   render() {
     return (

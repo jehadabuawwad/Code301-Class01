@@ -1,8 +1,8 @@
-import React from "react";
-import HornedBeasts from "./HornedBeasts";
-import SelectedBeast from "./SelectedBeast";
-import Row from "react-bootstrap/Row";
-import DataForm from "./DataForm";
+import React from 'react';
+import HornedBeasts from './HornedBeasts';
+import SelectedBeast from './SelectedBeast';
+import Row from 'react-bootstrap/Row';
+import DataForm from './DataForm';
 
 class Main extends React.Component {
   constructor(props) {
