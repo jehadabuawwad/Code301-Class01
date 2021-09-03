@@ -1,27 +1,29 @@
-import React from 'react';
-import Card from 'react-bootstrap/Card'
-
+import React from "react";
+import Card from "react-bootstrap/Card";
 
 class HornedBeasts extends React.Component {
-
   constructor(props) {
     super(props);
-    this.love = '💓';
+    this.love = "💓";
     this.state = { timesClicked: 0 };
   }
 
   Click = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     this.setState({ timesClicked: this.state.timesClicked + 1 });
     this.props.handleModalDisplay();
     this.props.selectBeast(this.props.image_url);
-  }
+  };
 
   render() {
     return (
       <div>
-        <Card style={{ width: '18rem' }} >
-          <Card.Img variant="top" src={this.props.image_url} onClick={this.Click} />
+        <Card style={{ width: "18rem" }}>
+          <Card.Img
+            variant="top"
+            src={this.props.image_url}
+            onClick={this.Click}
+          />
           <Card.Body>
             <Card.Title>{this.props.title}</Card.Title>
             <Card.Text>
@@ -30,7 +32,7 @@ class HornedBeasts extends React.Component {
           </Card.Body>
         </Card>
       </div>
-    )
+    );
   }
 }
 
