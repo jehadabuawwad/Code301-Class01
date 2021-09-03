@@ -1,10 +1,10 @@
-import React from "react";
-import Card from "react-bootstrap/Card";
+import React from 'react';
+import Card from 'react-bootstrap/Card';
 
 class HornedBeasts extends React.Component {
   constructor(props) {
     super(props);
-    this.love = "💓";
+    this.love = '💓';
     this.state = { timesClicked: 0 };
   }
 
@@ -18,7 +18,7 @@ class HornedBeasts extends React.Component {
   render() {
     return (
       <div>
-        <Card style={{ width: "18rem" }}>
+        <Card style={{ width: '18rem' }}>
           <Card.Img
             variant="top"
             src={this.props.image_url}
